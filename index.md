@@ -27,12 +27,10 @@ The format should be like the following:
 ```xml
 <lircmap>
 	<remote device="devinput">
-		
 		<obc1>KEY_FULL_SCREEN</obc1>
 		<obc2>KEY_PRESENTATION</obc2>
 		<obc3>KEY_MEDIA</obc3>
 		<obc4>KEY_EPG</obc4>
-		
 	</remote>
 </lircmap>
 ```
