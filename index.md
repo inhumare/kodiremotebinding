@@ -1,6 +1,10 @@
 ## Bind unused remote buttons in Kodi:
 This guide is intended for using a MCE remote with Kodi. In [the official Kodi source](https://github.com/xbmc/xbmc/blob/master/xbmc/input/IRTranslator.cpp), a list of buttons are defined that can be rebound easily with the normal keymap.xml file. If your remote has other buttons such as "slideshow", "aspect ratio", "Windows button" that you want to control Kodi with then you've found the right guide! 
 
+## Get access to Kodi:
+It's handy to enable ssh to log in and run commands (can use Putty for Windows).
+Enable SMB if it isn't already and map to remote drive so config files can be copied over easily.
+
 ### Find out the code of the buttons you want to use
 We need to find out the key information that Kodi receives when the button is pressed.
 
@@ -38,9 +42,10 @@ The format should be like the following:
 The obc tags are like variables we can bind the key codes to as Kodi doesn't specify all the buttons we need.
 
 ### Actually bind your buttons to Kodi actions
-Now edit existing keymap file or add a new one
+Now edit existing xml keymap file or add a new one in /userdata/keymaps/
+Choose an [action](https://kodi.wiki/view/Action_IDs) for Kodi to perform when key is pressed.
 
-The important bit is that the obc binds have to be in a separate tag <universalremote>.
+***The important bit is that the obc binds have to be in a separate tag <universalremote>.***
 Other more basic remote buttons that have been already defined by Kodi can be rebound normally in the <remote> tag.
 ```xml
   <keymap>
@@ -63,4 +68,6 @@ Other more basic remote buttons that have been already defined by Kodi can be re
 	</global>
 </keymap>
 ```
+	
+It's very convenient to use the command `kodi-send --action=reloadkeymaps` after modifying the keymap file instead of rebooting!
 
