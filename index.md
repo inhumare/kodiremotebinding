@@ -1,7 +1,7 @@
 ## Bind unused remote buttons in Kodi:
 This guide is intended for using a MCE remote with Kodi. In [the official Kodi source](https://github.com/xbmc/xbmc/blob/master/xbmc/input/IRTranslator.cpp), a list of buttons are defined that can be rebound easily with the normal keymap.xml file. If your remote has other buttons such as "slideshow", "aspect ratio", "Windows button" that you want to control Kodi with then you've found the right guide! 
 
-# Find out the code of the buttons you want to use
+### Find out the code of the buttons you want to use
 We need to find out the key information that Kodi receives when the button is pressed.
 
 - Enable debug logging and press keys you want to bind.
@@ -19,34 +19,49 @@ You should see something like:
 >174 0 KEY_FULL_SCREEN devinput
 >1a9 0 KEY_PRESENTATION devinput
 
-### Markdown
+### Link the key codes to variables we can bind to actions
+Make a new file in the userdata folder 
+>Lircmap.xml
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The format should be like the following:
+'''xml
+<lircmap>
+	<remote device="devinput">
+		
+		<obc1>KEY_FULL_SCREEN</obc1>
+		<obc2>KEY_PRESENTATION</obc2>
+		<obc3>KEY_MEDIA</obc3>
+		<obc4>KEY_EPG</obc4>
+		
+	</remote>
+</lircmap>
+'''
+The obc tags are like variables we can bind the key codes to as Kodi doesn't specify all the buttons we need.
 
-```markdown
-Syntax highlighted code block
+### Actually bind your buttons to Kodi actions
+Now edit existing keymap file or add a new one
 
-# Header 1
-## Header 2
-### Header 3
+The important bit is that the obc binds have to be in a separate tag <universalremote>.
+Other more basic remote buttons that have been already defined by Kodi can be rebound normally in the <remote> tag.
+  '''xml
+  <keymap>
+	<global>
+		<remote>
+			<recordedtv>AudioNextLanguage</recordedtv>
+			<mypictures>Screenshot</mypictures>
+			<channelplus>PageUp</channelplus>
+			<channelminus>PageDown</channelminus>
+			<livetv>ShowSubtitles</livetv>
+			<record>ShowSubtitles</record>
+			<eject>NextSubtitle</eject>
+		</remote>
+		<universalremote>
+			<obc1>NextSubtitle</obc1>
+			<obc2>ToggleWatched</obc2>
+			<obc3>Fullscreen</obc3>
+			<obc4>CodecInfo</obc4>
+		</universalremote>
+	</global>
+</keymap>
+'''
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/inhumare/kodiremotebinding/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
