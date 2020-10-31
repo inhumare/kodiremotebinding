@@ -9,6 +9,7 @@ Enable SMB if it isn't already and map to remote drive so config files can be co
 We need to find out the key information that Kodi receives when the button is pressed.
 
 - Enable debug logging and press keys you want to bind.
+This makes a debug log file in `/storage/.kodi/temp/kodi.log` (hidden folder)
 - Disable debug logging and grep with 'LIRC\|HandleKey' to filter out what we're interested in.
 ```
 cat kodi.log | grep 'LIRC\|HandleKey'
