@@ -43,7 +43,8 @@ Note that the device name is taken from the debug log above.
 The obc tags are like variables we can bind the key codes to as Kodi doesn't specify all the buttons we need.
 
 ### Actually bind your buttons to Kodi actions
-Now edit existing xml keymap file or add a new one in /userdata/keymaps/
+Now edit existing xml keymap file or add a new one in `/userdata/keymaps/`
+
 Choose an [action](https://kodi.wiki/view/Action_IDs) for Kodi to perform when key is pressed.
 
 ***The important bit is that the obc binds have to be in a separate tag <universalremote>.***
