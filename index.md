@@ -47,7 +47,7 @@ Now edit existing xml keymap file or add a new one in `/userdata/keymaps/`
 
 Choose an [action](https://kodi.wiki/view/Action_IDs) for Kodi to perform when key is pressed.
 
-***The important bit is that the obc binds have to be in a separate tag <universalremote>.***
+**The important bit is that the obc binds have to be in a separate tag <universalremote>.**
 Other more basic remote buttons that have been already defined by Kodi can be rebound normally in the <remote> tag.
 ```xml
   <keymap>
