@@ -12,6 +12,7 @@ cat kodi.log | grep 'LIRC\|HandleKey'
 You'll be able to see the keys you want to use that haven't been bound:
 >DEBUG: LIRC: - NEW 1a9 0 KEY_PRESENTATION devinput (KEY_PRESENTATION)
 >DEBUG: HandleKey: 0 (0x00, obc255) pressed, action is
+
 Notice the lack of any associated action - this is obviously what we want to add.
 
 - You can also use the command irw then pressed keys and device name will be listed in console.
