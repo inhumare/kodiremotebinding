@@ -10,7 +10,7 @@ We need to find out the key information that Kodi receives when the button is pr
 
 - Enable debug logging and press keys you want to bind.
 This makes a debug log file in `/storage/.kodi/temp/kodi.log` (hidden folder)
-- Disable debug logging and grep with 'LIRC\|HandleKey' to filter out what we're interested in.
+- Disable debug logging and grep with `LIRC\|HandleKey` to filter out what we're interested in.
 ```
 cat kodi.log | grep 'LIRC\|HandleKey'
 ```
