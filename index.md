@@ -1,5 +1,5 @@
 ## Bind unused remote buttons in Kodi:
-This guide is intended for using a MCE remote with Kodi. In [the official Kodi source](https://github.com/xbmc/xbmc/blob/master/xbmc/input/IRTranslator.cpp), a list of buttons are defined that can be rebound easily with the normal keymap.xml file. If your remote has other buttons such as "slideshow", "aspect ratio", "Windows button" that you want to control Kodi with then you've found the right guide! 
+This guide is intended for using a MCE remote with Kodi. In [the official Kodi source](https://github.com/xbmc/xbmc/blob/master/system/Lircmap.xml), a list of buttons are defined that can be rebound easily with the normal keymap.xml file. If your remote has other buttons such as "slideshow", "aspect ratio", "Windows button" that you want to control Kodi with then you've found the right guide! 
 
 ### Get access to Kodi:
 It's handy to enable ssh to log in and run commands (can use Putty for Windows).
