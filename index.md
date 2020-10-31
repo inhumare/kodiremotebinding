@@ -15,15 +15,19 @@ This makes a debug log file in `/storage/.kodi/temp/kodi.log` (hidden folder)
 cat kodi.log | grep 'LIRC\|HandleKey'
 ```
 You'll be able to see the keys you want to use that haven't been bound:
->DEBUG: LIRC: - NEW 1a9 0 KEY_PRESENTATION devinput (KEY_PRESENTATION)
->DEBUG: HandleKey: 0 (0x00, obc255) pressed, action is
+```
+DEBUG: LIRC: - NEW 1a9 0 KEY_PRESENTATION devinput (KEY_PRESENTATION)
+DEBUG: HandleKey: 0 (0x00, obc255) pressed, action is
+```
 
 Notice the lack of any associated action - this is obviously what we want to add.
 
 - You can also use the command irw then pressed keys and device name will be listed in console.
 You should see something like:
->174 0 KEY_FULL_SCREEN devinput
->1a9 0 KEY_PRESENTATION devinput
+```
+174 0 KEY_FULL_SCREEN devinput
+1a9 0 KEY_PRESENTATION devinput
+```
 
 ### Link the key codes to variables we can bind to actions
 Make a new file in the userdata folder 
