@@ -6,9 +6,9 @@ We need to find out the key information that Kodi receives when the button is pr
 
 - Enable debug logging and press keys you want to bind.
 - Disable debug logging and grep with 'LIRC\|HandleKey' to filter out what we're interested in.
-'''
+```
 cat kodi.log | grep 'LIRC\|HandleKey'
-'''
+```
 You'll be able to see the keys you want to use that haven't been bound:
 >DEBUG: LIRC: - NEW 1a9 0 KEY_PRESENTATION devinput (KEY_PRESENTATION)
 >DEBUG: HandleKey: 0 (0x00, obc255) pressed, action is
@@ -24,7 +24,7 @@ Make a new file in the userdata folder
 >Lircmap.xml
 
 The format should be like the following:
-'''xml
+```xml
 <lircmap>
 	<remote device="devinput">
 		
@@ -35,7 +35,7 @@ The format should be like the following:
 		
 	</remote>
 </lircmap>
-'''
+```
 The obc tags are like variables we can bind the key codes to as Kodi doesn't specify all the buttons we need.
 
 ### Actually bind your buttons to Kodi actions
@@ -43,7 +43,7 @@ Now edit existing keymap file or add a new one
 
 The important bit is that the obc binds have to be in a separate tag <universalremote>.
 Other more basic remote buttons that have been already defined by Kodi can be rebound normally in the <remote> tag.
-  '''xml
+```xml
   <keymap>
 	<global>
 		<remote>
@@ -63,5 +63,5 @@ Other more basic remote buttons that have been already defined by Kodi can be re
 		</universalremote>
 	</global>
 </keymap>
-'''
+```
 
