@@ -79,3 +79,5 @@ Other more basic remote buttons that have been already defined by Kodi can be re
 It's very convenient to use the command `kodi-send --action=reloadkeymaps` after modifying the keymap file to test changes when developing your binds instead of rebooting!
 
 A more in-depth comprehensive guide here https://forum.kodi.tv/showthread.php?tid=45972
+
+![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Finhumare.github.io%2Fkodiremotebinding%2F)
