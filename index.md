@@ -29,6 +29,7 @@ Make a new file in the userdata folder
 >Lircmap.xml
 
 The format should be like the following:
+Note that the device name is taken from the debug log above.
 ```xml
 <lircmap>
 	<remote device="devinput">
@@ -69,5 +70,5 @@ Other more basic remote buttons that have been already defined by Kodi can be re
 </keymap>
 ```
 	
-It's very convenient to use the command `kodi-send --action=reloadkeymaps` after modifying the keymap file instead of rebooting!
+It's very convenient to use the command `kodi-send --action=reloadkeymaps` after modifying the keymap file to test changes when developing your binds instead of rebooting!
 
